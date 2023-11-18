@@ -1,0 +1,10 @@
+body {
+  background-color: grey;
+}
+
+.game_container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  background-color: green;
+}
