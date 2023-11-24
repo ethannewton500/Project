@@ -18,9 +18,14 @@ class Player {
       let dice = new Dice(diceValue); 
       this.hand.push(dice);
 
-      this.handScore = diceValue;
+      this.handScore += diceValue;
       this.score += diceValue;
-      
+
+      if(this.getFirstDiceValue() == this.getSecondDiceValue())
+      {
+        this.handScore *= 2;
+      }
+
       index++;
     }
   }
@@ -31,6 +36,14 @@ class Player {
 
   getSecondDice() {
     return this.hand[1];
+  }
+  
+  getFirstDiceValue() {
+    return this.hand[0].value;
+  }
+
+  getSecondDiceValue() {
+    return this.hand[1].value;
   }
 
   getHandScore() {

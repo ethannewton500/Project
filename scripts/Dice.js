@@ -4,6 +4,10 @@ class Dice {
     this.value = value;
   }
 
+  getValue() {
+    return this.value;
+  }
+
   getPath() {
     const value = this.value;
 

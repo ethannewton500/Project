@@ -45,13 +45,22 @@
             </div>
 					</div>
 				</div>
+				<div>
+					<h2 id="displayRound"></h2>
+				</div>
         <div class="button_window">
           <button id="roll">ROLL</button>
           <button id="newGame">NEW GAME</button>
         </div>
         <div class="game_displays">
-          <div class="message_window player_color" id="playerMessage"></div>
-          <div class="message_window computer_color" id="playerMessage"></div>
+          <div class="message_window player_color" id="playerMessage">
+						<div class="score"><h2>Hand Score: <span id="playerHandScore">0</span></h2></div>
+						<div class="score"><h2>Total Score: <span id="playerScore">0</span></h2></div>
+					</div>
+          <div class="message_window computer_color" id="computerMessage">
+						<div class="score"><h2>Hand Score: <span id="computerHandScore">0</span></h2></div>
+						<div class="score"><h2>Total Score: <span id="computerScore">0</span></h2></div>
+					</div>
         </div>
 			</div>
 		</main>
