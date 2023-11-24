@@ -15,19 +15,44 @@
 
 	<body>
 		<header>
+      <img src="images/all_dice.png" alt="dice" class="header_dice">
 			<h1>Dice Game!</h1>
+      <img src="images/all_dice.png" alt="dice" class="header_dice">
 		</header>
 		<main>
 			<div class="game_container">
-				<h2>Welcome</h2>
 				<div class="game_displays">
 					<div id="playerWindow" class="game_window">
 						<h2>Player</h2>
+            <div class="dice_window">
+              <div id="playerDice1" class="dice_image_container">
+                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice1">
+              </div>
+              <div id="playerDice2" class="dice_image_container">
+                <img src="images/dice_1.png" alt="dice" class="dice_image" id="dice2">
+              </div>
+            </div>
 					</div>
 					<div id="computerWindow" class="game_window">
 						<h2>Computer</h2>
+            <div class="dice_window">
+              <div id="computerDice1" class="dice_image_container">
+                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice3">
+              </div>
+              <div id="computerDice2" class="dice_image_container">
+                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice4">
+              </div>
+            </div>
 					</div>
 				</div>
+        <div class="button_window">
+          <button id="roll">ROLL</button>
+          <button id="newGame">NEW GAME</button>
+        </div>
+        <div class="game_displays">
+          <div class="message_window player_color" id="playerMessage"></div>
+          <div class="message_window computer_color" id="playerMessage"></div>
+        </div>
 			</div>
 		</main>
 		<footer>
