@@ -1,23 +1,28 @@
+import Dice from "./Dice.js";
+
 class Player {
   constructor() {
     this.hand = [];
     this.score = 0;
+    this.handScore = 0;
   }
 
   rollDice() {
-    index = 0;
+    let index = 0;
+    
+    this.hand = [];
 
     while (index < 2)
     {
       let diceValue = Math.floor(Math.random() * 6) + 1;
       let dice = new Dice(diceValue); 
       this.hand.push(dice);
+
+      this.handScore = diceValue;
+      this.score += diceValue;
+      
+      index++;
     }
-
-    let dice = new Dice();
-    dice.roll();
-
-    return dice;
   }
 
   getFirstDice() {
@@ -38,3 +43,4 @@ class Player {
     return score;
   }
 }
+export default Player;

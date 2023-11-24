@@ -4,9 +4,10 @@ class Dice {
     this.value = value;
   }
 
-  describeSelf() {
+  getPath() {
     const value = this.value;
 
-    return '<img src="images/dice' + value + '.png" alt="dice-' + value + '">'
+    return 'images/dice_' + value + '.png'
   }
 }
+export default Dice;
