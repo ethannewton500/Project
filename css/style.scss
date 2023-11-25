@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 // background color variables
 $bodyBColor: linear-gradient(to bottom right, #669999 0%, #000066 100%);
 
-$headerBColor: orange;
+$headerBColor: #5985d9;
 
 $gameContainerBColor: rgba(255, 255, 255, 0.4);
 $playerWindowBColor: #445c84;
 $computerWindowBColor: #344c7c;
 
-$footerBColor: purple;
+$footerBColor: #131d2f;
 
 // width variables
 $gameContainerWidth: 90%;
@@ -58,6 +60,7 @@ body {
   height: 100vh;
   margin: 0;
   background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -69,7 +72,7 @@ header {
   margin-bottom: 30px;
 
   img {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 }
@@ -205,6 +208,7 @@ footer {
   justify-content: center;
   margin-top: auto;
   background-color: $footerBColor;
+  color: #5985d9;
 }
 
 @media screen and (max-width: 700px) {
@@ -257,6 +261,10 @@ footer {
   .dice_image_container {
     width: 100%;
     padding-top: 100%;
+  }
+
+  .buttons {
+    gap: 10px;
   }
 
   .button_window {
