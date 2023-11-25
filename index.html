@@ -15,53 +15,94 @@
 
 	<body>
 		<header>
-      <img src="images/all_dice.png" alt="dice" class="header_dice">
+			<img src="images/all_dice.png" alt="dice" class="header_dice" />
 			<h1>Dice Game!</h1>
-      <img src="images/all_dice.png" alt="dice" class="header_dice">
+			<img src="images/all_dice.png" alt="dice" class="header_dice" />
 		</header>
 		<main>
 			<div class="game_container">
 				<div class="game_displays">
 					<div id="playerWindow" class="game_window">
 						<h2>Player</h2>
-            <div class="dice_window">
-              <div id="playerDice1" class="dice_image_container">
-                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice1">
-              </div>
-              <div id="playerDice2" class="dice_image_container">
-                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice2">
-              </div>
-            </div>
+						<div class="dice_window">
+							<div id="playerDice1" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice1" />
+							</div>
+							<div id="playerDice2" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice2" />
+							</div>
+						</div>
 					</div>
 					<div id="computerWindow" class="game_window">
 						<h2>Computer</h2>
-            <div class="dice_window">
-              <div id="computerDice1" class="dice_image_container">
-                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice3">
-              </div>
-              <div id="computerDice2" class="dice_image_container">
-                <img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice4">
-              </div>
-            </div>
+						<div class="dice_window">
+							<div id="computerDice1" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice3" />
+							</div>
+							<div id="computerDice2" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="dice" class="dice_image" id="dice4" />
+							</div>
+						</div>
 					</div>
 				</div>
 				<div>
 					<h2 id="displayRound"></h2>
 				</div>
-        <div class="button_window">
-          <button id="roll">ROLL</button>
-          <button id="newGame">NEW GAME</button>
-        </div>
-        <div class="game_displays">
-          <div class="message_window player_color" id="playerMessage">
-						<div class="score"><h2>Hand Score: <span id="playerHandScore">0</span></h2></div>
-						<div class="score"><h2>Total Score: <span id="playerScore">0</span></h2></div>
+				<div class="button_window">
+					<div class="game_displays">
+						<div class="message_window" id="playerMessage">
+							<div class="score">
+								<h3>Hand Score: <span id="playerHandScore">0</span></h3>
+							</div>
+							<div class="score">
+								<h3>Total Score: <span id="playerScore">0</span></h3>
+							</div>
+						</div>
+						<div class="buttons">
+							<button id="roll">ROLL</button>
+							<button id="newGame">NEW GAME</button>
+						</div>
+						<div class="message_window" id="computerMessage">
+							<div class="score">
+								<h3>Hand Score: <span id="computerHandScore">0</span></h3>
+							</div>
+							<div class="score">
+								<h3>Total Score: <span id="computerScore">0</span></h3>
+							</div>
+						</div>
 					</div>
-          <div class="message_window computer_color" id="computerMessage">
-						<div class="score"><h2>Hand Score: <span id="computerHandScore">0</span></h2></div>
-						<div class="score"><h2>Total Score: <span id="computerScore">0</span></h2></div>
-					</div>
-        </div>
+				</div>
+			</div>
+			<div class="rules_window">
+				<h2 id="rules">Rules of the dice game</h2>
+				<h3>Starting the game</h3>
+				<p>
+					To start the game, click the "ROLL" button. This will roll the dice for both the player and the computer. The
+					game is played in 3 rounds.
+				</p>
+				<h3>Playing the game</h3>
+				<p>In each round, the player and the computer will roll the dice.</p>
+				<p>After each roll the score will be calculated based off of the following rules:</p>
+				<ul>
+					<li>
+						Zero Score: If either of the dice shows a 1, the score of that round is zero. <br />
+						For example a roll of 6 and 1 scores 0
+					</li>
+					<li>
+						Double Score: If both dice show the same number, the score is double the total of te dice. However this
+						excludes 1 as it will result in a score of 0. <br />
+						For example a roll of 5 and 5 will score 20
+					</li>
+					<li>
+						Standard Score: For any other dice combination, the score is the some of the dice <br> For example a roll of 3 and 2 scores 7
+					</li>
+				</ul>
+				<p>Repeat the following process for the 3 rounds of the game</p>
+				<h3>Determining the Winner</h3>
+				<p>
+					After each round, the player and the computer will have their scores updated. The player with the highest score
+					after 3 rounds is the winner.
+				</p>
 			</div>
 		</main>
 		<footer>

@@ -1,11 +1,11 @@
 // background color variables
-$bodyBColor: green;
+$bodyBColor: linear-gradient(to bottom right, #669999 0%, #000066 100%);
 
 $headerBColor: orange;
 
-$gameContainerBColor: yellow;
-$playerWindowBColor: blue;
-$computerWindowBColor: red;
+$gameContainerBColor: rgba(255, 255, 255, 0.4);
+$playerWindowBColor: #445c84;
+$computerWindowBColor: #344c7c;
 
 $footerBColor: purple;
 
@@ -22,12 +22,42 @@ $diceWindowHeight: 150px;
 // margin variables
 $marginBottom: calc(10% / 3);
 
+@mixin button-style($background_color, $text_color) {
+  background-color: $background_color;
+  color: $text_color;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px black;
+  padding: 5px;
+  width: 150px;
+  font-size: 1.2em;
+
+  &:active {
+    box-shadow: 0px 2px black;
+    transform: translateY(3px);
+  }
+  &:disabled {
+    background-color: gray;
+    color: black;
+    box-shadow: none;
+    transform: none;
+    box-shadow: 0px 5px black;
+  }
+}
+
+@mixin border-style($border_color) {
+  border: 2px solid $border_color;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+
 body {
-  background-color: $bodyBColor;
+  background: $bodyBColor;
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
+  background-attachment: fixed;
 }
 
 header {
@@ -54,6 +84,7 @@ header {
   align-items: center;
   box-sizing: border-box;;
   max-width: 1000px;
+  @include border-style(black);
 }
 
 .game_displays {
@@ -71,6 +102,7 @@ header {
   margin: $marginBottom 0;
   align-items: center;
   height: calc(20px + diceWindow);
+  border-radius: 5px;
 }
 
 .dice_window {
@@ -86,7 +118,6 @@ header {
   width: 45%;
   height: 0;
   padding-top: 45%;
-  background-color: green;
 }
 
 .dice_image {
@@ -100,13 +131,12 @@ header {
 
 .message_window {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   width: 45%;
   height: 100px;
-  background-color: black;
-  margin-bottom: $marginBottom;
+  margin: 20px 0;
 }
 
 .button_window {
@@ -114,10 +144,22 @@ header {
   display: flex;
   gap: 10px;
   flex-direction: column;
+  width: 100%;
 
-  button {
-    width: 100px;
+  #roll {
+    @include button-style(lime, black);
   }
+
+  #newGame {
+    @include button-style(red, black);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .player_color {
@@ -136,9 +178,90 @@ header {
   background-color: $computerWindowBColor;
 }
 
+.rules_window {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 30px auto;
+  width: $gameContainerWidth;
+  background-color: $gameContainerBColor;
+  box-sizing: border-box;
+  padding: 20px;
+  @include border-style(black);
+
+  h3 {
+    border-bottom: 2px solid black;
+  }
+}
+
+.winner {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: lime;
+}
+
 footer {
   display: flex;
   justify-content: center;
   margin-top: auto;
   background-color: $footerBColor;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    img {
+      display: none;
+    }
+  }
+
+  .game_container {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .game_window {
+    width: 100%;
+    margin: 20px;
+    @include border-style(black);
+  }
+
+  .dice_window {
+    width: 100%;
+  }
+
+  .message_window {
+    width: 100%;
+  }
+
+  .button_window {
+    width: 100%;
+  }
+
+  .rules_window {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dice_window {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .dice_image_container {
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  .button_window {
+    .game_displays {
+      flex-direction: column;
+    }
+  }
 }
