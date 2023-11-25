@@ -205,10 +205,26 @@ header {
 
 footer {
   display: flex;
-  justify-content: center;
   margin-top: auto;
   background-color: $footerBColor;
   color: #5985d9;
+
+  .footer_items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  a {
+    color: #5985d9;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #5985d9;
+  }
 }
 
 @media screen and (max-width: 700px) {

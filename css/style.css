@@ -187,9 +187,23 @@ header img {
 
 footer {
   display: flex;
-  justify-content: center;
   margin-top: auto;
   background-color: #131d2f;
+  color: #5985d9;
+}
+footer .footer_items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+footer a {
+  color: #5985d9;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
   color: #5985d9;
 }
 
