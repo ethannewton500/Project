@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import Dice from './Dice.js';
 
 class Player {
@@ -14,7 +13,6 @@ class Player {
     this.hand = [];
 
     while (index < 2) {
-      // Math.floor(Math.random() * 6) + 1
       const diceValue = Math.floor(Math.random() * 6) + 1;
       const dice = new Dice(diceValue);
       this.hand.push(dice);

@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable require-jsdoc */
 import Player from './Player.js';
 
 const buttonNewGame = $('#newGame');
